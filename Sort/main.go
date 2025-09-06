@@ -24,9 +24,13 @@ func main() {
 
 	fmt.Printf("%-15s %-10s %-15s %-15s %-15s\n", "Algorithm", "Case", "Elasped(ms)", "Swaps", "Iterations")
 	fmt.Println(strings.Repeat("-", 70))
-	measureExecution(bubbleSort, random, "Bubble", "Random")
-	measureExecution(bubbleSort, bestCase, "Bubble", "Best")
-	measureExecution(bubbleSort, worstCase, "Bubble", "Worst")
+	measureExecution(bubbleSort, slices.Clone(random), "Bubble", "Random")
+	measureExecution(bubbleSort, slices.Clone(bestCase), "Bubble", "Best")
+	measureExecution(bubbleSort, slices.Clone(worstCase), "Bubble", "Worst")
+
+	measureExecution(selectionSort, slices.Clone(random), "Selection", "Random")
+	measureExecution(selectionSort, slices.Clone(bestCase), "Selection", "Best")
+	measureExecution(selectionSort, slices.Clone(worstCase), "Selection", "Worst")
 }
 
 func measureExecution(fn func([]int) (int, int), array []int, name, ratio string) {
