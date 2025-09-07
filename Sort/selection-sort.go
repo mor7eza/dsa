@@ -1,7 +1,6 @@
 package main
 
-func selectionSort(arr []int) (int, int) {
-	var swaps, iterations int
+func selectionSort(arr []int) (swaps, iterations int) {
 	for i := range SIZE {
 		minIndex := i
 		for j := i + 1; j < SIZE; j++ {
@@ -15,5 +14,5 @@ func selectionSort(arr []int) (int, int) {
 			swaps++
 		}
 	}
-	return swaps, iterations
+	return
 }

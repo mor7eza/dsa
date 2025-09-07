@@ -1,7 +1,6 @@
 package main
 
-func bubbleSort(arr []int) (int, int) {
-	var swaps, iterations int
+func bubbleSort(arr []int) (swaps, iterations int) {
 	for i := range SIZE - 1 {
 		isSorted := true
 		for j := range SIZE - i - 1 {
@@ -17,5 +16,5 @@ func bubbleSort(arr []int) (int, int) {
 			break
 		}
 	}
-	return swaps, iterations
+	return
 }

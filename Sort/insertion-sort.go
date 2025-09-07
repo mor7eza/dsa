@@ -1,7 +1,6 @@
 package main
 
-func insertionSort(arr []int) (int, int) {
-	var swaps, iterations int
+func insertionSort(arr []int) (swaps, iterations int) {
 	for i := 1; i < SIZE; i++ {
 		insertIndex := i
 		currentValue := arr[i]
@@ -17,5 +16,5 @@ func insertionSort(arr []int) (int, int) {
 		}
 		arr[insertIndex] = currentValue
 	}
-	return swaps, iterations
+	return
 }
