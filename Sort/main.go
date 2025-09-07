@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-const SIZE = 10_000
+const SIZE = 1_000_000
 
 func main() {
 	array := make([]int, SIZE)
@@ -30,6 +30,9 @@ func main() {
 
 	// Quick Sort
 	measureExecution(quickSort, slices.Clone(array), "Quick")
+
+	// Counting Sort
+	measureExecution(countingSort, slices.Clone(array), "Counting")
 }
 
 func measureExecution(fn any, array []int, name string) {
